@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: eurekafeignclient
+server:
+  port: 7008
+eureka:
+  instance:
+    prefer-ip-address: true
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:7000/eureka/
+feign:
+  hystrix:
+    enabled: true
+hystrix:
+  dashboard:
+    proxy-stream-allow-list: localhost
+management:
+  endpoints:
+    web:
+      exposure:
+        exclude: "*"

@@ -1,0 +1,23 @@
+# 应用名称
+spring:
+  application:
+    name: configserver
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: classpath:/shared
+        git:
+          search-paths: ###网络GIT网络资源
+  profiles:
+    active: native
+server:
+  port: 7012
+eureka:
+  instance:
+    hostname: localhost
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:7000/eureka/
+

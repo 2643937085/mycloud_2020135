@@ -23,6 +23,7 @@
         <module>eurekafeignclient</module>
         <module>gatewayserver</module>
         <module>oauth2server</module>
+        <module>configserver</module>
     </modules>
 
     <dependencies>

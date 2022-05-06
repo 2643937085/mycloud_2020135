@@ -1,0 +1,34 @@
+spring:
+  application:
+    name: gatewayserver
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: false
+      routes:
+      - id: eurekafeigclient
+        uri: lb://eurekafeignclient
+        predicates:
+          - Path=/abc/**
+        filters:
+          - StripPrefix=1
+      - id: studentserver
+        uri: lb://studentserver
+        predicates:
+          - Path=/abcd/**
+        filters:
+          - StripPrefix=1
+      - id: oauth2server
+        uri: lb://oauth2server
+        predicates:
+          - Path=/oauth/**
+server:
+  port: 7078
+eureka:
+  instance:
+    prefer-ip-address: true
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:7000/eureka/

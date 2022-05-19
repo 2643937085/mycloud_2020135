@@ -1,0 +1,27 @@
+# 应用名称
+spring:
+  application:
+    name: comsumer1
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
+  cloud:
+    stream:
+      bindings:
+        Input:
+          destination: minestream
+          group: stream
+# 应用服务 WEB 访问端口
+server:
+  port: 9001
+eureka:
+  instance:
+    hostname: localhost
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:7000/eureka/
+
+

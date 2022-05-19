@@ -24,6 +24,9 @@
         <module>gatewayserver</module>
         <module>oauth2server</module>
         <module>configserver</module>
+        <module>comsumer1</module>
+        <module>provider</module>
+        <module>comsumer2</module>
     </modules>
 
     <dependencies>
